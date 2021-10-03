@@ -1,12 +1,14 @@
-import { GlobalStyle } from './styles/GlobalStyle'
+import SeparationLine from './components/SeparationLine';
+import GlobalStyle from './styles/GlobalStyle';
 
-import { Greetings } from './components/Greetings'
-
-export function App() {
+const App: React.FC = () => {
   return (
     <>
       <GlobalStyle />
-      <Greetings />
+      <SeparationLine />
+      <h1>Hello World</h1>
     </>
-  )
-}
+  );
+};
+
+export default App;

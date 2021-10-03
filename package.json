@@ -1,13 +1,15 @@
 {
-  "name": "electron-react-typescript",
-  "author": "Diego Fernandes <diego.schell.f@gmail.com>",
-  "version": "2.0.0",
-  "description": "An Electron boilerplate including TypeScript, React, Jest and ESLint.",
+  "name": "rfsystem",
+  "author": "Rafael Souza",
+  "version": "1.0.0",
   "main": "./.webpack/main/index.js",
+  "description": "Application developed Electron",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
+    "package:x32": "electron-forge package --arch=ia32",
     "make": "electron-forge make",
+    "make:x32": "electron-forge make --arch=ia32",
     "release": "electron-forge publish",
     "lint": "eslint . --ext js,ts",
     "test": "jest"
@@ -15,9 +17,14 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@material-ui/core": "^5.0.0-beta.5",
+    "frameless-titlebar": "^2.1.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hot-loader": "4.13.0",
+    "react-icons": "^4.2.0",
     "styled-components": "5.3.0"
   },
   "devDependencies": {
@@ -40,23 +47,23 @@
     "@types/react": "17.0.11",
     "@types/react-dom": "17.0.8",
     "@types/styled-components": "5.1.10",
-    "@typescript-eslint/eslint-plugin": "4.27.0",
-    "@typescript-eslint/parser": "4.27.0",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
     "babel-loader": "8.2.2",
     "cross-env": "7.0.3",
     "electron": "13.1.2",
-    "eslint": "7.29.0",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-config-standard": "16.0.3",
-    "eslint-plugin-import": "2.23.4",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-prettier": "3.4.0",
-    "eslint-plugin-promise": "5.1.0",
-    "eslint-plugin-react": "7.24.0",
-    "eslint-plugin-standard": "5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4",
     "jest": "27.0.4",
     "npm-run-all": "4.1.5",
-    "prettier": "2.3.1",
+    "prettier": "^2.4.1",
     "ts-jest": "27.0.3",
     "typescript": "4.3.4",
     "wait-on": "5.3.0"
@@ -64,8 +71,8 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "name": "Electron starter",
-        "executableName": "electron-starter",
+        "name": "rfsystem",
+        "executableName": "rfsystem",
         "icon": "assets/icon",
         "extraResource": [
           "assets"
@@ -96,7 +103,8 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "Electron Starter"
+            "name": "rfsystem",
+            "executableName": "rfsystem"
           }
         },
         {
